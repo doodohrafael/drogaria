@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/templatePadrao.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{produtoMBean.atualizarSessao}" type="preRenderView" />
+		</f:metadata>
+	</ui:define>
+	<ui:define name="conteudo">
+			<h1 class="titulos">TELA CADASTRAR PRODUTO</h1>
+		<h:form>
+			<p:panelGrid columns="2" styleClass="semBorda">
+
+				<p:outputLabel value="#{Constantes.LABEL_NOME}:" />
+				<p:inputText value="#{produtoMBean.produto.nome}" size="150" />
+
+				<p:outputLabel value="#{Constantes.LABEL_DESCRICAO}:" />
+				<p:inputTextarea value="#{produtoMBean.produto.descricao}"
+					size="150">
+				</p:inputTextarea>
+
+				<p:outputLabel value="#{Constantes.LABEL_PRECO}:" />
+				<p:inputText value="#{produtoMBean.produto.preco}" size="6" />
+
+				<p:outputLabel value="#{Constantes.LABEL_QUANTIDADE}:" />
+				<p:inputText value="#{produtoMBean.produto.quantidade}" size="3" />
+
+				<p:outputLabel value="#{Constantes.LABEL_FABRICANTES}:" />
+				<p:selectOneMenu value="#{produtoMBean.produto.fabricante}"
+					converter="conversor">
+					<f:selectItem itemValue="" itemLabel="Selecione" />
+					<f:selectItems value="#{produtoMBean.colecaoFabricantes}"
+						var="fabricante" itemLabel="#{fabricante.descricao}"
+						itemValue="#{fabricante}" />
+				</p:selectOneMenu>
+
+
+			</p:panelGrid>
+
+			<p:panelGrid>
+				<p:commandButton value="#{Constantes.BOTAO_VOLTAR}" icon=""
+					styleClass="ui-button-success" style="margin-right: .5rem;"
+					action="/paginas/consultarProduto.xhtml?faces-redirect=true">
+				</p:commandButton>
+
+				<p:commandButton value="#{Constantes.BOTAO_SALVAR}"
+					icon="pi pi-plus" styleClass="ui-button-success"
+					style="margin-right: .5rem;" action="#{produtoMBean.salvar}"
+					update="@form :caixaMensagem">
+				</p:commandButton>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

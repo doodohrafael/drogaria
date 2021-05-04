@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import url("#{resource['css/bootstrap.min.css']}");
+
+@import url("#{resource['css/config.css']}");
+
+@import url("#{resource['css/global.css']}");
+
+@import url("#{resource['css/custom.css']}");
+
+@import url("#{resource['css/responsive.css']}");
+
+

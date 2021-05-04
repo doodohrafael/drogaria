@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/templatePadrao.xhtml">
+	<ui:define name="conteudo">
+
+		<h:panelGroup
+			rendered="#{loginMBean.funcionarioLogado.funcao == null}">
+			<div class="login">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h:form>
+								<img src="../imagens/avatar-login.svg" alt=""
+									class="img-avatar-login" />
+								<h5 class="login-h1">LOGIN</h5>
+								<div class="p-grid ui-fluid">
+									<div class="row">
+										<div class="p-col-12 p-md-4">
+											<div class="ui-inputgroup">
+												<p:inputMask id="cpf" mask="999.999.999-99"
+													placeholder="CPF"
+													value="#{loginMBean.funcionarioLogado.cpf}"
+													style="font-size:20px;" />
+												<p:tooltip for="cpf" value="Digite seu cpf" position="right" />
+											</div>
+										</div>
+										<div class="p-col-12 p-md-4">
+											<p:password id="senha"
+												value="#{loginMBean.funcionarioLogado.senha}" maxlength="8"
+												placeholder="Senha" style="font-size:20px;" />
+											<p:tooltip for="senha" value="Digite sua senha"
+												position="right" />
+											<div class="size-btn-login">
+												<p:commandButton value="#{Constantes.BOTAO_ENTRAR}"
+													class="btn btn-primary" styleClass="button-entrar"
+													update=":caixaMensagem :menu "
+													action="#{loginMBean.entrar}" icon="pi pi-sign-in" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:panelGroup>
+
+	</ui:define>
+</ui:composition>
+</html>

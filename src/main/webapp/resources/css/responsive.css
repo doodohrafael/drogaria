@@ -1,0 +1,110 @@
+@media ( max-width : 1322px) {
+	/* DataTables */
+	.ui-datatable-reflow thead th, .ui-datatable-reflow tfoot td {
+		display: none;
+	}
+	.ui-datatable-reflow .ui-datatable-data td {
+		text-align: left;
+		display: block;
+		border: 0px none;
+		width: 100% !important;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		clear: left;
+	}
+	.ui-datatable-reflow .ui-datatable-data.ui-widget-content {
+		border: 0px none;
+	}
+	.ui-datatable-reflow .ui-datatable-data tr.ui-widget-content {
+		border-left: 0px none;
+		border-right: 0px none;
+	}
+	.ui-datatable-reflow .ui-datatable-data td .ui-column-title {
+		padding: .4em;
+		min-width: 30%;
+		margin: -.4em 1em -.4em -.4em;
+	}
+	.ui-datatable-reflow .ui-datatable-data td[role="gridcell"] .ui-column-title
+		{
+		padding: .4em;
+		min-width: 30%;
+		display: initial !important;
+		margin: -.4em 1em -.4em -.4em;
+		font-weight: initial;
+	}
+	.tbl-con-car {
+		background: var(- -surface-e);
+		padding: 0.5rem;
+		box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0
+			rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+		border-radius: 4px;
+		margin-bottom: 2rem;
+		font-weight: 700;
+	}
+	body .ui-datatable .ui-datatable-data>tr.ui-datatable-even {
+		/* cor das linhas */
+		background-color: white;
+	}
+	body .ui-datatable .ui-datatable-data>tr>td {
+		/* cor das bordas */
+		border: 1px solid rgba(0, 0, 0, 0.08);
+	}
+	.col-ope {
+		border: none !important;
+		margin-bottom: 5px;
+	}
+	.size-btn-login {
+		width: 18%;
+		margin: 0;
+	}
+}
+
+@media ( max-width : 1124px) {
+	.login .button-entrar {
+		left: 225%;
+	}
+	.size-btn-login {
+		width: 20%;
+		margin: 0;
+	}
+}
+
+@media ( max-width : 928px) {
+	.login-h1 {
+		font-size: 2.0cm !important;
+	}
+	body .ui-button.ui-button-text-only .ui-button-text {
+		padding: 0;
+	}
+	.login .button-entrar {
+		left: 120%;
+		font-size: 15px !important;
+		margin-right: 80px;
+	}
+	.size-btn-login {
+		width: 30%;
+		margin: 0;
+	}
+	
+	.login .img-avatar-login {
+		width: 30%;
+	}
+}
+
+@media ( max-width : 520px) {
+	.login .img-avatar-login {
+		width: 40%;
+	}
+	.size-btn-login {
+		width: 40%;
+		margin: 0;
+	}
+	
+	.login .button-entrar {
+		left: 80%;
+		font-size: 15px !important;
+		margin-right: 80px;
+	}
+}

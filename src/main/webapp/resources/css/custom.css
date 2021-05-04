@@ -1,0 +1,83 @@
+/* PANELGRID */
+.semBorda tr, .semBorda td {
+	border: none !important;
+}
+
+/* LOGIN */
+.login {
+	border: none;
+	box-shadow: 0 0 10px 0 rgba(168 0 0);
+	height: 61ex;
+	margin: 0 auto;
+	text-align: center;
+	width: 65%;
+	color: white;
+	border-bottom: 80px solid #212529;
+	font-size: 21px;
+	background-color: rgb(168 0 0);
+	margin: 0;
+	position: absolute; /* 2 */
+	top: 50%;
+	left: 50%; /* 3 */
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+}
+
+.login .img-avatar-login {
+	width: 16%;
+	height: 10%;
+	margin-top: 8px;
+	border: 2px white solid;
+	height: 10%;
+	margin-top: 8px;
+	border-radius: 90px;
+}
+
+.size-btn-login {
+	width: 18%;
+}
+
+.p-md-4 {
+	padding: 1.5rem !important;
+}
+
+.login .button-entrar {
+	margin: 0;
+	top: 50%;
+	left: 228%;
+	height: 50px;
+	background: transparent;
+	border: 1px solid white;
+	margin-top: 30px;
+	cursor: pointer;
+	border-radius: 30px;
+	font-size: 20px !important;
+	border-width: unset;
+}
+
+.login .button-entrar:hover {
+	background: #212529;
+	border: 1px solid white;
+	transition-duration: 0.6s;
+}
+
+.login-h1 {
+	font-size: 2.5cm !important;
+	text-align: center;
+	font-weight: bold;
+}
+
+.botao-sair {
+	position: absolute !important;
+	left: 94% !important;
+	font-size: 20px !important;
+	top: 50% !important;
+	transform: translate(-50%, -50%) !important;
+	background-color: #000 !important;
+	border: #000 solid 1px !important;
+}
+
+.botao-sair:hover {
+	background-color: #DF0101 !important;
+	border: #DF0101 solid 1px !important;
+}

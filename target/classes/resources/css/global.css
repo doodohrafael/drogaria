@@ -1,0 +1,49 @@
+/* FONTE */
+body .ui-widget:not(.pi), body .ui-widget .ui-widget:not(.pi) {
+	font-family: 'Roboto', sans-serif; 
+}
+
+/* h1,h2,h3,h4,h5,h6 {
+	font-weight: 700;
+}
+ */
+
+/* MENU LATERAL ESQUERDO */
+body .ui-panelmenu .ui-panelmenu-header a {
+	text-transform: uppercase;
+	font-weight: bold;
+	size: 30px;
+	
+}
+
+body .ui-panelmenu .ui-panelmenu-header {
+	padding: 25px;
+}
+
+body .ui-layout-unit .ui-layout-unit-header {
+	background-color: rgb(168 0 0);
+	border: none;
+	font-size: 25px;
+	text-align: center;
+}
+
+.btn-adicionar {
+	width: 10%; 
+	height: 60px; 
+}
+
+body .ui-layout-unit {
+	border: none;
+}
+
+
+body .ui-layout-unit {
+    background-color: #000;
+}
+
+.titulos {
+	font-size: 40px;
+	color: #fff;
+	margin-left: 10px;
+	font-weight: bold;
+}

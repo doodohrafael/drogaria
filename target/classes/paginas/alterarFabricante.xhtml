@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/templatePadrao.xhtml">
+
+	<ui:define name="conteudo">
+		<center>
+			<h1>TELA ALTERAR FABRICANTE</h1>
+		</center>
+		<h:form>
+			<h:panelGrid columns="2">
+
+				<h:outputLabel value="#{Constantes.LABEL_DESCRICAO}" />
+				<p:inputTextarea value="#{fabricanteMBean.fabricante.descricao}" />
+
+				<p:commandButton value="#{Constantes.BOTAO_VOLTAR}" icon=""
+					styleClass="ui-button-success" style="margin-right: .5rem;"
+					action="/paginas/consultarFabricante.xhtml?faces-redirect=true">
+				</p:commandButton>
+
+				<p:commandButton value="#{Constantes.BOTAO_SALVAR}"
+					action="#{fabricanteMBean.alterar}" update="@form :caixaMensagem">
+
+				</p:commandButton>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

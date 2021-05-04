@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/templatePadrao.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{funcionarioMBean.consultarFuncionarios}"
+				type="preRenderView" />
+		</f:metadata>
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+
+			<p:toolbar>
+				<p:toolbarGroup>
+					<h1>TELA CONSULTAR FUNCIONÁRIO</h1>
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:commandButton value="#{Constantes.BOTAO_ADICIONAR}"
+				icon="pi pi-plus" styleClass="ui-button-success btn-adicionar"
+				style="margin: 7px; font-size: 20px;"
+				action="/paginas/cadastrarFuncionario.xhtml?faces-redirect=true">
+			</p:commandButton>
+
+			<p:dataTable id="tabela-funcionarios"
+				emptyMessage="#{Constantes.MSG_REGISTRO_NAO_ENCONTRADO}"
+				value="#{funcionarioMBean.colecaoFuncionarios}" var="funcionario"
+				rows="10" paginator="true">
+
+				<p:column headerText="#{Constantes.LABEL_NOME}">
+					<h:outputText value="#{funcionario.nome}" />
+				</p:column>
+
+				<p:column headerText="#{Constantes.LABEL_FUNCAO}">
+					<h:outputText value="#{funcionario.funcao}" />
+				</p:column>
+
+				<p:column headerText="#{Constantes.LABEL_CPF}" style="width: 12%;">
+					<h:outputText value="#{funcionario.cpf}" />
+				</p:column>
+
+				<p:column headerText="#{Constantes.LABEL_OPERADORES}"
+					style="width: 12%; text-align:center;">
+
+					<p:commandButton value="#{Constantes.BOTAO_EXCLUIR}"
+						style=" background-color: red; border: none;"
+						action="#{funcionarioMBean.excluir(funcionario)}"
+						update="tabela-funcionarios :caixaMensagem">
+						<p:confirm header="Confirmação"
+							message="Você quer deletar este registro?"
+							icon="pi pi-info-circle" />
+					</p:commandButton>
+
+					<p:commandButton value="#{Constantes.BOTAO_ALTERAR}"
+						style="border: none;" action="#{funcionarioMBean.telaAlterar}">
+
+						<f:setPropertyActionListener value="#{funcionario}"
+							target="#{funcionarioMBean.funcionario}" />
+
+					</p:commandButton>
+
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+
+		<p:dialog closable="true" draggable="true" modal="true"
+			appendTo="@(body)" resizable="false" header="Confirmar Exclusão"
+			widgetVar="dialog-exclusao">
+			<h:form>
+				<p:confirmDialog global="true" showEffect="fade" hideEffect="fade"
+					responsive="true" width="350">
+					<p:commandButton value="Não" type="button"
+						styleClass="ui-confirmdialog-no ui-button-flat" />
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" />
+				</p:confirmDialog>
+			</h:form>
+		</p:dialog>
+
+	</ui:define>
+</ui:composition>
+</html>
