@@ -12,3 +12,5 @@
 #### Autenticação feita com o Phaselistener.
 #### Banco Mysql, jpql e a ferramenta Workbench.
 #### Junit para facilitar alguns testes.
+
+## Sistema ainda em construção...
