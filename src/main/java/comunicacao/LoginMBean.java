@@ -3,6 +3,8 @@ package comunicacao;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import controller.FuncionarioController;
 import model.Funcionario;
 import util.Constantes;
@@ -19,7 +21,7 @@ public class LoginMBean {
 		}
 	}
 
-	Funcionario funcionarioLogado = new Funcionario();
+	static Funcionario funcionarioLogado = new Funcionario();
 	FuncionarioController funcionarioController = new FuncionarioController();
 
 	Validacao validar = new Validacao();
@@ -28,7 +30,8 @@ public class LoginMBean {
 		try {
 			if (validarCampos()) {
 				funcionarioLogado = funcionarioController.autenticarFuncionario(funcionarioLogado.getCpf(),
-						funcionarioLogado.getSenha());
+						DigestUtils.md5Hex(funcionarioLogado.getSenha()));
+				
 				if (funcionarioLogado.getCpf() != null && funcionarioLogado.getSenha() != null) {
 					return Constantes.telaPrincipal;
 				} else {

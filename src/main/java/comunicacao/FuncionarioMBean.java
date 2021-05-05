@@ -5,6 +5,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import controller.FuncionarioController;
 import model.Funcionario;
 import util.Constantes;
@@ -34,6 +36,8 @@ public class FuncionarioMBean {
 		try {
 			cpfAlterar = false;
 			if (validarCampos()) {
+				//Cripitografar senha
+				funcionario.setSenha(DigestUtils.md5Hex(funcionario.getSenha()));
 				funcionarioController.incluir(funcionario);
 				setFuncionario(new Funcionario());
 				Mensagens.adicionarMensagemInfo(Constantes.MSG_SALVO_SUCESSO);
@@ -57,8 +61,12 @@ public class FuncionarioMBean {
 
 	public void excluir(Funcionario funcionario) {
 		try {
-			funcionarioController.excluir(funcionario);
-			Mensagens.adicionarMensagemInfo(Constantes.MSG_EXCLUIDO_SUCESSO);
+			if(!LoginMBean.funcionarioLogado.equals(funcionario)) {
+				funcionarioController.excluir(funcionario);
+				Mensagens.adicionarMensagemInfo(Constantes.MSG_EXCLUIDO_SUCESSO);
+			} else {
+				Mensagens.adicionarMensagemAlerta(Constantes.MSG_USUARIO_LOGADO);
+			}
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			Mensagens.adicionarMensagemErro(Constantes.MSG_NAO_EXCLUIDO_SUCESSO);
@@ -73,6 +81,7 @@ public class FuncionarioMBean {
 		try {
 			cpfAlterar = true;
 			if (validarCampos()) {
+				funcionario.setSenha(DigestUtils.md5Hex(funcionario.getSenha()));
 				funcionarioController.alterar(funcionario);
 				setFuncionario(new Funcionario());
 				return Constantes.telaConsultarFuncionario;

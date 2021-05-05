@@ -49,3 +49,7 @@ body .ui-layout-unit {
 	font-weight: bold;
 	text-align: center;
 }
+
+body .ui-layout-resizer {
+	background-color: #fff;
+}

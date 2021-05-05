@@ -16,13 +16,12 @@
 
 		<h:form>
 			<h1 class="titulos">TELA CADASTRAR FABRICANTES</h1>
-			<p:panelGrid columns="2" styleClass="semBorda">
-				<p:outputLabel value="Descrição: "></p:outputLabel>
-				<p:inputTextarea value="#{fabricanteMBean.fabricante.descricao}"
-					maxlength="50" id="input-descricao">
-				</p:inputTextarea>
-			</p:panelGrid>
-
+			<div class="card fab-des">
+					<p:outputLabel value="#{Constantes.LABEL_DESCRICAO}:" styleClass="lbl-fab-des"></p:outputLabel>
+					<p:inputTextarea value="#{fabricanteMBean.fabricante.descricao}"
+						maxlength="50" id="input-descricao" rows="6" cols="33">
+					</p:inputTextarea>
+			</div>
 			<p:panelGrid>
 				<p:commandButton value="#{Constantes.BOTAO_VOLTAR}" icon=""
 					styleClass="ui-button-success button-pg-voltar"

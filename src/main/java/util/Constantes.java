@@ -57,6 +57,7 @@ public class Constantes {
 	public static final String MSG_NAO_EXCLUIDO_SUCESSO = "Erro ao tentar excluir.";
 	public static final String MSG_ALTERADO_SUCESSO = "Alterado com sucesso.";
 	public static final String MSG_NAO_ALTERADO_SUCESSO = "Erro ao tentar alterar.";
+	public static final String MSG_USUARIO_LOGADO = "Este usuário está logado, não pode ser excluído.";
 	
 	// Mensagens Campos Obrigatórios
 	public static final String MSG_CAMPO_DESCRICAO_OBG = "O campo descrição é obrigatório.";
