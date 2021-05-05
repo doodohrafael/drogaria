@@ -28,8 +28,9 @@ body .ui-layout-unit .ui-layout-unit-header {
 }
 
 .btn-adicionar {
-	width: 10%; 
-	height: 60px; 
+	font-size: 23px !important;
+	text-align: center;
+	margin-bottom: 8px !important;
 }
 
 body .ui-layout-unit {
@@ -46,4 +47,5 @@ body .ui-layout-unit {
 	color: #fff;
 	margin-left: 10px;
 	font-weight: bold;
+	text-align: center;
 }

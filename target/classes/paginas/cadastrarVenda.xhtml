@@ -15,7 +15,7 @@
 		<h:form id="form-vendas">
 
 			<h1 class="titulos">TELA CADASTRAR VENDA</h1>
-			<p:dataTable id="tabela-produtos"
+			<p:dataTable id="tabela-produtos" reflow="true"
 				emptyMessage="#{Constantes.MSG_REGISTRO_NAO_ENCONTRADO}"
 				value="#{vendaMBean.colecaoProdutos}" var="produto" rows="10"
 				paginator="true">
@@ -58,12 +58,11 @@
 					<h:outputText id="valor-total"
 						value="Valor Total: R$#{vendaMBean.venda.valorTotal}"
 						styleClass="valor-total" />
-
-					<p:commandButton id="btn-carrinho" value="Carrinho" type="button"
-						icon="pi pi-shopping-cart" onclick="PF('dialog-itens').show();"
-						update=":form-dialog-itens"
-						style="width:10%; height:50px; margin:10px; 
-							   font-size: 1.5rem;" />
+					<div class="btn-carrinho">
+						<p:commandButton value="Carrinho" type="button"
+							icon="pi pi-shopping-cart" onclick="PF('dialog-itens').show();"
+							update=":form-dialog-itens" style="font-size: 20px;" />
+					</div>
 				</f:facet>
 			</p:dataTable>
 			<br />

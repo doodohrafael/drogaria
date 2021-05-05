@@ -17,14 +17,15 @@
 	<ui:define name="conteudo">
 		<h:form>
 			<h1 class="titulos">TELA CONSULTAR PRODUTO</h1>
-			<p:commandButton value="#{Constantes.BOTAO_ADICIONAR}"
-				rendered="#{loginMBean.funcionarioLogado.funcao != 'Balconista'}"
-				icon="pi pi-plus" styleClass="ui-button-success btn-adicionar"
-				style="margin: 7px; font-size: 20px;"
-				action="/paginas/cadastrarProduto.xhtml?faces-redirect=true">
-			</p:commandButton>
-
-			<p:dataTable id="tabela-produtos"
+			<div class="btn-adicionar">
+				<p:commandButton value="#{Constantes.BOTAO_ADICIONAR}"
+					rendered="#{loginMBean.funcionarioLogado.funcao != 'Balconista'}"
+					icon="pi pi-plus" styleClass="btn-adicionar"
+					style="margin: 7px; font-size: 20px;"
+					action="/paginas/cadastrarProduto.xhtml?faces-redirect=true">
+				</p:commandButton>
+			</div>
+			<p:dataTable id="tabela-produtos" reflow="true"
 				emptyMessage="#{Constantes.MSG_REGISTRO_NAO_ENCONTRADO}"
 				value="#{produtoMBean.colecaoProdutos}" var="produto" rows="10"
 				paginator="true">

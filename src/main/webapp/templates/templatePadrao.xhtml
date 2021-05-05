@@ -89,7 +89,7 @@
 				<p:outputLabel value=" Função: #{loginMBean.funcionarioLogado.funcao}"
 					style="font-weight: bold; color: #fff;" />
 
-				<p:commandButton value="Sair" id="botao-sair" icon="pi pi-power-off"
+				<p:commandButton value="Sair" icon="pi pi-power-off"
 					styleClass="botao-sair"
 					rendered="#{loginMBean.funcionarioLogado.funcao != null}"
 					action="#{loginMBean.sair}" />

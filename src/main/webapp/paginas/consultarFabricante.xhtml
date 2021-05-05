@@ -15,15 +15,17 @@
 	</ui:define>
 	<ui:define name="conteudo">
 		<h:form>
-			<h1 class="titulos">TELA CONSULTAR FABRICANTE</h1>
-			<p:commandButton value="#{Constantes.BOTAO_ADICIONAR}"
-				rendered="#{loginMBean.funcionarioLogado.funcao != 'Balconista'}"
-				icon="pi pi-plus" styleClass="ui-button-success btn-adicionar"
-				style="margin: 7px; font-size: 20px;"
-				action="/paginas/cadastrarFabricante.xhtml?faces-redirect=true">
-			</p:commandButton>
+			<div class="btn-adicionar">
+				<h1 class="titulos">TELA CONSULTAR FABRICANTE</h1>
+				<p:commandButton value="#{Constantes.BOTAO_ADICIONAR}"
+					rendered="#{loginMBean.funcionarioLogado.funcao != 'Balconista'}"
+					icon="pi pi-plus" styleClass="btn-adicionar"
+					action="/paginas/cadastrarFabricante.xhtml?faces-redirect=true">
+				</p:commandButton>
+			</div>
 
-			<p:dataTable id="tabela-fabricantes"
+
+			<p:dataTable id="tabela-fabricantes" reflow="true"
 				emptyMessage="#{Constantes.MSG_REGISTRO_NAO_ENCONTRADO}"
 				value="#{fabricanteMBean.colecaoFabricantes}" var="fabricante"
 				filterBy="#{fabricante.descricao}" rows="10" paginator="true">

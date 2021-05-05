@@ -32,10 +32,10 @@
 		min-width: 30%;
 		display: initial !important;
 		margin: -.4em 1em -.4em -.4em;
-		font-weight: initial;
+		font-weight: 700 !important;
 	}
 	.tbl-con-car {
-		background: var(- -surface-e);
+		background: var(--surface-e);
 		padding: 0.5rem;
 		box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0
 			rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
@@ -59,6 +59,7 @@
 		width: 18%;
 		margin: 0;
 	}
+	
 }
 
 @media ( max-width : 1124px) {
@@ -87,7 +88,6 @@
 		width: 30%;
 		margin: 0;
 	}
-	
 	.login .img-avatar-login {
 		width: 30%;
 	}
@@ -101,7 +101,6 @@
 		width: 40%;
 		margin: 0;
 	}
-	
 	.login .button-entrar {
 		left: 80%;
 		font-size: 15px !important;

@@ -14,7 +14,7 @@
 	color: white;
 	border-bottom: 80px solid #212529;
 	font-size: 21px;
-	background-color: rgb(168 0 0);
+	background-color: rgb(168, 0, 0);
 	margin: 0;
 	position: absolute; /* 2 */
 	top: 50%;
@@ -78,6 +78,15 @@
 }
 
 .botao-sair:hover {
-	background-color: #DF0101 !important;
-	border: #DF0101 solid 1px !important;
+	background-color: #fff !important;
+	border: #fff solid 1px !important;
+	color: #000 !important;
+}
+
+.titulo-pagina-principal {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 20px;
+	color: #fff;
+	font-weight: 700;
 }
