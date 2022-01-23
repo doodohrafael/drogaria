@@ -2,7 +2,7 @@
 
 ## Tecnologias e ferramentas utilizadas:
 
-#### Versão 14 do Java;
+#### Versão 14 do Java.
 #### Projeto do tipo Maven, pois é bem mais prático e rápido para baixar e consumir bibliotecas.
 #### Para o mapeamento de objetos e persistência, JPA 2.2 com o framework Hibernate.
 #### JSF 2.3 com a biblioteca de componentes Primefaces 8 para praticidade e comunicação view e manager.
